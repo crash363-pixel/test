@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Armario Inteligente</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>👕 Armario Inteligente</h1>
+      <p>Sube tu ropa, detecta colores y crea conjuntos para decidir qué ponerte hoy.</p>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <h2>1) Añadir prenda</h2>
+        <form id="itemForm">
+          <label>
+            Foto de la prenda
+            <input type="file" id="imageInput" accept="image/*" required />
+          </label>
+
+          <label>
+            Nombre
+            <input type="text" id="nameInput" placeholder="Ej. Camisa lino blanca" required />
+          </label>
+
+          <label>
+            Categoría
+            <select id="categoryInput" required>
+              <option value="">Selecciona…</option>
+              <option value="parte_superior">Parte superior</option>
+              <option value="parte_inferior">Parte inferior</option>
+              <option value="calzado">Calzado</option>
+              <option value="abrigo">Abrigo</option>
+              <option value="accesorio">Accesorio</option>
+            </select>
+          </label>
+
+          <label>
+            Temporada
+            <select id="seasonInput" required>
+              <option value="todo_el_ano">Todo el año</option>
+              <option value="primavera">Primavera</option>
+              <option value="verano">Verano</option>
+              <option value="otono">Otoño</option>
+              <option value="invierno">Invierno</option>
+            </select>
+          </label>
+
+          <button type="submit">Guardar prenda</button>
+        </form>
+        <p id="saveStatus" class="status"></p>
+      </section>
+
+      <section class="panel">
+        <h2>2) Tu repositorio de ropa</h2>
+        <div id="closetGrid" class="grid"></div>
+      </section>
+
+      <section class="panel">
+        <h2>3) Combinar conjunto</h2>
+        <div class="selectors" id="outfitSelectors"></div>
+        <div class="actions">
+          <button id="suggestBtn" type="button">Sugerir conjunto para hoy</button>
+          <button id="clearSelectionBtn" type="button" class="ghost">Limpiar selección</button>
+        </div>
+        <p id="outfitMessage" class="status"></p>
+        <div id="outfitPreview" class="outfit-preview"></div>
+      </section>
+    </main>
+
+    <template id="itemCardTemplate">
+      <article class="item-card">
+        <img alt="" />
+        <div>
+          <h3></h3>
+          <p class="meta"></p>
+          <p class="color"></p>
+        </div>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
