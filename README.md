@@ -12,11 +12,16 @@ Aplicación web simple para:
 
 No requiere backend ni instalación de dependencias.
 
+1. Abre una terminal en la carpeta del proyecto (`/workspace/test`).
+2. Ejecuta:
+
 ```bash
-python -m http.server 8000
+python -m http.server 8123
 ```
 
-Abre `http://localhost:8000`.
+3. Abre `http://127.0.0.1:8123`.
+
+> Si ves `Not Found`, normalmente el servidor se lanzó desde otra carpeta. Para corregirlo, entra antes al proyecto con `cd /workspace/test` y vuelve a ejecutar el comando.
 
 ## Flujo
 
